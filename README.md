@@ -23,7 +23,7 @@
 * Modify 'cfg.dataset' and 'cfg.setting' for training on other/custom dataset
 * You may need to change 'cfg.ref_point_num' and 'cfg.margin' to obtain decent results.
 ---
-```
+
 ## Citation
 Please cite our paper if you use this repository.
 ```
