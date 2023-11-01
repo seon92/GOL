@@ -299,8 +299,8 @@ def save_ckpt(cfg, model, postfix):
     print(f'ckpt saved to {save_file}.')
 
 
-def set_wandb(cfg):
-    wandb.login(key='1ba025567068b512f5d1a4125a11e7e7cb62fe9c')
+def set_wandb(cfg, key='private_key'):
+    wandb.login(key=key)
     wandb.init(project=cfg.experiment_name, tags=[cfg.dataset])
     wandb.config.update(cfg)
     wandb.save('*.py')
