@@ -235,12 +235,12 @@ def train(epoch, train_loader, model, optimizer, cfg, prev_loss_record):
 
         # =====================loss======================
         tic = time.time()
-        dist_loss = compute_metric_loss(embs, base_idx, ref_idx, labels_np, model.fdc_points, cfg.margin, cfg)
+        dist_loss = compute_metric_loss(embs, base_idx, ref_idx, labels_np, model.ref_points, cfg.margin, cfg)
         dist_loss_time = time.time() - tic
         tic = time.time()
-        angle_loss, logits, order_gt = compute_order_loss(embs, base_idx, ref_idx, labels_np, model.fdc_points, cfg)
+        angle_loss, logits, order_gt = compute_order_loss(embs, base_idx, ref_idx, labels_np, model.ref_points, cfg)
         angle_loss_time = time.time() - tic
-        center_loss = compute_center_loss(embs, labels_np, model.fdc_points, cfg)
+        center_loss = compute_center_loss(embs, labels_np, model.ref_points, cfg)
 
 
         total_loss = (cfg.drct_wieght * angle_loss) + dist_loss + center_loss
